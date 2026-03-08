@@ -266,26 +266,41 @@ button {
   font-weight: bold;
 }
 
-/* Circular Photo with Live Motion */
-.my-photo {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%; /* Makes it a perfect circle */
-    object-fit: cover;
-    display: block;
-    margin: 0 auto 20px auto;
+/* Blob Container Style */
+.blob-wrapper {
+    width: 280px; /* Tomar ichha moto size nite paro */
+    height: 280px;
+    margin: 0 auto 20px;
+    overflow: hidden;
     
-    /* The Border */
-    border: 5px solid var(--accent-color); 
+    /* Initial organic shape */
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     
-    /* Live Motion: Floating and Pulsing */
-    animation: float 3s ease-in-out infinite, glow 2s infinite alternate;
-    
-    /* Transition for Hover */
-    transition: transform 0.3s ease;
-    cursor: pointer;
+    /* Animation call */
+    animation: morph 8s ease-in-out infinite;
+    background: linear-gradient(45deg, #007bff, #00d4ff); /* Background color if image fails */
+    border: 5px solid #007bff; /* Optional border */
 }
 
+/* Image inside the blob */
+.my-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Jate chobi-ti stretch na hoy */
+}
+
+/* Keyframes for Morphing Effect */
+@keyframes morph {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
 /* 1. Floating Animation (Up and Down) */
 @keyframes float {
     0% { transform: translateY(0px); }
@@ -327,5 +342,4 @@ button {
     transition: 0.3s ease;
     text-decoration: none;
 }
-
 
