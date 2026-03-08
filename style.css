@@ -343,3 +343,42 @@ button {
     text-decoration: none;
 }
 
+/* Name Fade In-Out Animation */
+.typing-name {
+    font-size: 3.5rem;
+    color: #007bff;
+    animation: pulse-name 3s ease-in-out infinite;
+}
+
+@keyframes pulse-name {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.02); }
+}
+
+/* Profession Typewriter Effect (Pure CSS) */
+.typed-text::after {
+    content: "CSE Student";
+    animation: typing-logic 6s infinite;
+    font-weight: bold;
+    color: #333;
+}
+
+@keyframes typing-logic {
+    0%, 45% { content: "a CSE Student"; }
+    50%, 95% { content: "a Web Developer"; }
+    100% { content: "a CSE Student"; }
+}
+
+/* Cursor Blinking Effect */
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: #007bff;
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
